@@ -8,40 +8,39 @@ import jakarta.persistence.Id;
 import java.util.Objects;
 
 @Entity
-public class Pessoa {
+public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    private String nome;
+    private String name;
     private String cpf;
     private String email;
-    private String telefone;
+    private String telephone;
 
-    public Pessoa(){
+    public User(){
     }
 
-    public Pessoa(String nome, String cpf, String email, String telefone) {
-        this.nome = nome;
+    public User(String name, String cpf, String email, String telephone) {
+        this.name = name;
         this.cpf = cpf;
         this.email = email;
-        this.telefone = telefone;
+        this.telephone = telephone;
     }
 
     public Long getId() {
         return id;
     }
 
-
     public void setId(Long id) {
         this.id = id;
     }
 
-    public String getNome() {
-        return nome;
+    public String getName() {
+        return name;
     }
 
-    public void setNome(String nome) {
-        this.nome = nome;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getCpf() {
@@ -60,21 +59,21 @@ public class Pessoa {
         this.email = email;
     }
 
-    public String getTelefone() {
-        return telefone;
+    public String getTelephone() {
+        return telephone;
     }
 
-    public void setTelefone(String telefone) {
-        this.telefone = telefone;
+    public void setTelephone(String telephone) {
+        this.telephone = telephone;
     }
 
     @Override
     public String toString() {
-        return "Pessoa{" +
-                "nome='" + nome + '\'' +
+        return "User{" +
+                "name='" + name + '\'' +
                 ", cpf='" + cpf + '\'' +
                 ", email='" + email + '\'' +
-                ", telefone='" + telefone + '\'' +
+                ", telephone='" + telephone + '\'' +
                 '}';
     }
 
@@ -82,8 +81,8 @@ public class Pessoa {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Pessoa pessoa = (Pessoa) o;
-        return Objects.equals(id, pessoa.id);
+        User user = (User) o;
+        return Objects.equals(id, user.id);
     }
 
     @Override
