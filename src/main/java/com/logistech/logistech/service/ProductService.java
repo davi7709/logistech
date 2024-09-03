@@ -1,6 +1,7 @@
 package com.logistech.logistech.service;
 
 import com.logistech.logistech.model.Product;
+import com.logistech.logistech.model.User;
 import com.logistech.logistech.repository.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -20,12 +21,23 @@ public class ProductService {
         return productRepository.save(product);
     }
 
-    public Optional<Product> findProductById(Product product, Long id){
+    public Optional<Product> findProductById(Long id){
         return productRepository.findById(id);
+    }
+
+    public Product updateProduct(Product product) {
+        productValidate(product);
+        return productRepository.save(product);
     }
 
     public void deleteProduct(Long id){
         productRepository.deleteById(id);
+    }
+
+    private void productValidate(Product product) {
+        if (productRepository.existsBySku(product.getSku())) {
+            throw new IllegalArgumentException("SKU já cadastrado.");
+        }
     }
 
 }
