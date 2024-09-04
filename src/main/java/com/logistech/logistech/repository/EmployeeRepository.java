@@ -1,8 +1,8 @@
 package com.logistech.logistech.repository;
 
-import com.logistech.logistech.model.User;
+import com.logistech.logistech.model.Employee;
 import org.springframework.data.repository.CrudRepository;
 
-public interface UserRepository extends CrudRepository <User, Long> {
+public interface EmployeeRepository extends CrudRepository <Employee, Long> {
     boolean existsByCpf(String cpf);
 }

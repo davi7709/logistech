@@ -1,7 +1,6 @@
 package com.logistech.logistech.service;
 
 import com.logistech.logistech.model.Product;
-import com.logistech.logistech.model.User;
 import com.logistech.logistech.repository.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

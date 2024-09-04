@@ -1,11 +1,8 @@
 package com.logistech.logistech.controller;
 
 import com.logistech.logistech.model.Product;
-import com.logistech.logistech.model.User;
 import com.logistech.logistech.service.ProductService;
-import com.logistech.logistech.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -18,7 +15,7 @@ public class ProductController {
     private ProductService productService;
 
     @GetMapping
-    public List<Product> findAllProducts(@PathVariable Product product) {
+    public List<Product> findAllProducts(Product product) {
         return productService.findAllProducts();
     }
 

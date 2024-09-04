@@ -7,8 +7,8 @@ import jakarta.persistence.Id;
 
 import java.util.Objects;
 
-@Entity(name = "user")
-public class User {
+@Entity(name = "employee")
+public class Employee {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
@@ -17,10 +17,10 @@ public class User {
     private String email;
     private String telephone;
 
-    public User(){
+    public Employee(){
     }
 
-    public User(String name, String cpf, String email, String telephone) {
+    public Employee(String name, String cpf, String email, String telephone) {
         this.name = name;
         this.cpf = cpf;
         this.email = email;
@@ -69,7 +69,7 @@ public class User {
 
     @Override
     public String toString() {
-        return "User{" +
+        return "Employee{" +
                 "name='" + name + '\'' +
                 ", cpf='" + cpf + '\'' +
                 ", email='" + email + '\'' +
@@ -81,8 +81,8 @@ public class User {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        User user = (User) o;
-        return Objects.equals(id, user.id);
+        Employee employee = (Employee) o;
+        return Objects.equals(id, employee.id);
     }
 
     @Override
