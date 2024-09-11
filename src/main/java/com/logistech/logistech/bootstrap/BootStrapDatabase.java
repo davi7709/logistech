@@ -18,7 +18,7 @@ public class BootStrapDatabase implements CommandLineRunner{
     }
     @Override
     public void run(String... args) {
-        try {
+        /*try {
             Employee user = new Employee("Davi", "43721789806", "davi@gmail", "98390120");
             Employee user2 = new Employee("jonas", "8920348532", "jonas@gmail", "98348759");
             employeeRepository.save(user);
@@ -31,7 +31,7 @@ public class BootStrapDatabase implements CommandLineRunner{
 
         } catch (Exception e) {
             e.printStackTrace();
-        }
+        }*/
     }
 
 }

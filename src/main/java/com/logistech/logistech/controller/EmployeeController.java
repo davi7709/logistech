@@ -3,17 +3,24 @@ package com.logistech.logistech.controller;
 import com.logistech.logistech.model.Employee;
 import com.logistech.logistech.service.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Optional;
 
-@RestController
-@RequestMapping("/cadastro")
+@Controller
+//@RestController("/cadastro")
 public class EmployeeController {
     @Autowired
     private EmployeeService employeeService;
 
+    @GetMapping("/cadastro")
+    public String exibirFormulario(Model model) {
+        model.addAttribute("employee", new Employee());
+        return "cadastro";
+    }
     @GetMapping
     public List<Employee> findAllEmployee(Employee employee) {
         return employeeService.findAllEmployee();
